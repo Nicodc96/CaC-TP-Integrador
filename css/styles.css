@@ -140,6 +140,9 @@
     #banner-header{
         margin-bottom: -27vh;
     }
+    #navbarHeaderLinks > .navbar-nav{
+        align-items: flex-end;
+    }
 }
 @media screen and (max-width:425px){
     #navbarHeader > .container-fluid > .navbar-brand{
