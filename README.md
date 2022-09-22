@@ -12,4 +12,3 @@ utilizando las herramientas aprendiendas durante la cursada (HTML, CSS & Bootstr
 <div style="display:flex; justify-content: center;">
 <img src="https://i.ibb.co/FKcK2Sn/imagen-final.jpg" longdesc="" width="504" height="785">
 </div>
-</div>
