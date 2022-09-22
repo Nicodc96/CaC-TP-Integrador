@@ -285,11 +285,12 @@
 @media screen and (max-width:425px){
     #cards{
         display: block!important;
-        padding-left: 10vw!important;
+        padding-left: 15vw!important;
         padding-right: 10vw!important;
+        padding-top: 2vh!important;
     }
     #cards > .card{
-        width: 21rem;
+        width: 18rem;
         margin-bottom: 0.75vh;
         height: auto;
     }
