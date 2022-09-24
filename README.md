@@ -9,6 +9,6 @@
 <p> El proyecto consiste en varias partes: en la primera parte se deberá replicar la página principal que se encuentra debajo 
 utilizando las herramientas aprendiendas durante la cursada (HTML, CSS & Bootstrap).
 </p>
-<div style="display:flex; justify-content: center;">
+<div align="center">
 <img src="https://i.ibb.co/FKcK2Sn/imagen-final.jpg" longdesc="" width="504" height="785">
 </div>
