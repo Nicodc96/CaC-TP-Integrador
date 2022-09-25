@@ -37,23 +37,19 @@
     color: #45da68;
 }
 .banner{
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
+    background-image: url("../media/img/ba1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    filter: brightness(40%);
     width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: 0px;
-    padding-right: 0px;
-}
-.banner > .img-fluid{
-    filter: brightness(45%);
-    object-fit: contain;
-    overflow: hidden;
+    height: 75vh;
 }
 .banner-text{
     position: absolute;
     left: 50vw;
-    bottom: 20vh;
+    bottom: 35vh;
     right: 10vw;
     color: white;
     text-align: right;
@@ -135,7 +131,7 @@
         position: relative;
         left: auto;
         right: auto;
-        bottom: 40vh;
+        bottom: 15vh;
     }
     #banner-header{
         margin-bottom: -27vh;
