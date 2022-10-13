@@ -25,7 +25,7 @@
                       <a class="nav-link" href="#cards">Los oradores</a>
                       <a class="nav-link" href="#">El lugar y la fecha</a>
                       <a class="nav-link" href="#main-form">Conviértete en orador</a>
-                      <a class="nav-link nav-tickets" href="#">Comprar tickets</a>
+                      <a class="nav-link nav-tickets" data-bs-toggle="modal" data-bs-target="#staticModalTicket">Comprar tickets</a>
                     </div>
                   </div>
             </div>
@@ -38,7 +38,7 @@
                 a otros estudiantes de Codo a Codo y los oradores del primer nivel que tenemos para ti. ¡Te esperamos!
             </p>
             <button id="btn-Orador" class="btn btn-outline-light">¡Quiero ser orador!</button>
-            <button id="btn-ComprarTickets" class="btn btn-success">Comprar tickets</button>
+            <button id="btn-ComprarTickets" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticModalTicket">Comprar tickets</button>
         </div>
     </header>
     <main>
@@ -126,6 +126,81 @@
                 </div>
             </form>
         </section>
+        <section id="modalTickets">
+            <div class="modal fade" id="staticModalTicket" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Compre su ticket:</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div id="categorias-descuento" class="d-flex gap-1">
+                        <div class="box-categoria categoria-estudiante">
+                            <p class="text-center fw-semibold pt-3">Estudiante</p>
+                            <p class="text-center">Tienen un descuento</p>
+                            <p class="text-center fw-bold">80%</p>
+                            <p class="text-center text-secondary" id="text-documentacion">* presentar documentación</p>
+                        </div>
+                        <div class="box-categoria categoria-trainee">
+                            <p class="text-center fw-semibold pt-3">Trainee</p>
+                            <p class="text-center">Tienen un descuento</p>
+                            <p class="text-center fw-bold">50%</p>
+                            <p class="text-center text-secondary" id="text-documentacion">* presentar documentación</p>
+                        </div>
+                        <div class="box-categoria categoria-junior">
+                            <p class="text-center fw-semibold pt-3">Junior</p>
+                            <p class="text-center">Tienen un descuento</p>
+                            <p class="text-center fw-bold">15%</p>
+                            <p class="text-center text-secondary" id="text-documentacion">* presentar documentación</p>
+                        </div>
+                      </div>
+                      <p class="fs-6 text-uppercase lh-base text-center mt-2 mb-0">venta</p>
+                      <p class="fs-1 text-uppercase lh-base fw-semibold text-center mt-0 mb-0">valor de ticket $200</p>
+                      <form id="form-tickets">
+                        <div class="row">
+                            <div class="col col-name">
+                                <input class="form-control" type="text" placeholder="Nombre" id="form-nombre" required>
+                            </div>
+                            <div class="col col-surname">
+                                <input class="form-control" type="text" placeholder="Apellido" id="form-apellido" required>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <input type="email" class="form-control" id="form-email" placeholder="Correo" required>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <label for="form-cantidad">Cantidad:</label>
+                                <input class="form-control" type="number" placeholder="Cantidad" id="form-cantidad" min="0" required value="1">
+                            </div>
+                            <div class="col">
+                                <label for="form-categorias">Categoría:</label>
+                                <select class="form-select" id="form-categorias">
+                                    <option selected>Elija una opción:</option>
+                                    <option value="1">Estudiante</option>
+                                    <option value="2">Trainee</option>
+                                    <option value="3">Junior</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <input type="text" readonly class="form-control-plaintext" id="valor-final" value="Total a pagar: $">
+                            </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center gap-2">
+                      <button type="button" class="btn btn-success">Borrar</button>
+                      <button type="button" class="btn btn-success">Resumen</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
     </main>
     <footer>
         <section id="footer-nav">
@@ -155,5 +230,6 @@
         </section>
     </footer>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
 </html>

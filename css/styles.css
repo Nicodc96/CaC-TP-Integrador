@@ -35,6 +35,7 @@
 }
 #navbarHeaderLinks > .navbar-nav .nav-tickets:hover{
     color: #45da68;
+    cursor: pointer;
 }
 .banner{
     background-image: url("../media/img/ba1.jpg");
@@ -55,10 +56,11 @@
     text-align: right;
 }
 .btn-success{
-    background-color: #169131;;
+    background-color: #0e9e2e;
+    border-color: #0e912a!important;
 }
 .btn-success:hover{
-    background-color: #11d83c!important;
+    background-color: #117226!important;
 }
 @media screen and (max-width:1300px){
     .banner-text{
@@ -187,21 +189,60 @@
     --bs-btn-padding-x: 22.70vw;
     --bs-btn-padding-y: 0.375rem;
     background-color: #96c93e;
-    border-color: #7ca82f;
+    border-color: #7ca82f!important;
 }
 #btnFormEnviar:hover{
     background-color: #79aa2b!important;
-    border-color: #72992d;
+    border-color: #72992d!important;
 }
-#footer-nav{
-    background: rgb(28,54,67);
-    background: linear-gradient(90deg, rgba(28,54,67,1) 0%, rgba(30,83,113,1) 100%);
+.modal{
+    --bs-modal-width: 750px;
 }
-#footer-nav > .nav > .nav-item > .nav-link{
+.modal-body{
+    padding-bottom: 0px;
+}
+.modal-dialog-scrollable .modal-content {
+    width: 75vw!important;
+    height: 72vh;
+  }
+.box-categoria{
+    border: 1px solid black;
+    width: 40vw;
+    height: auto;
+}
+.categoria-estudiante{
+    border-color: #007bff;
+}
+.categoria-estudiante:hover{
+    background-color: #a9d3ff;
+    cursor: pointer;
+}
+.categoria-trainee{
+    border-color: #4bb7c8;
+}
+.categoria-trainee:hover{
+    background-color: #cce5ff;
+    cursor: pointer;
+}
+.categoria-junior{
+    border-color: #ffc10a;
+}
+.categoria-junior:hover{
+    background-color: #ffe8a3;
+    cursor: pointer;
+}
+#text-documentacion{
+    font-size: 13px;
+}
+.col-name{
+    padding-right: 0px;
+}
+#valor-final{
+    background-color: #cce5ff;
+    color: #5192e2;
+    height: 5vh;
     border-radius: 8px;
-}
-#footer-nav > .nav > .nav-item > .nav-link:hover{
-    background-color: rgb(36, 126, 179);
+    padding-left: 1vw;
 }
 @media (min-width:1300px) and (max-width:1428px){
     #btnFormEnviar{
@@ -330,6 +371,16 @@
 }
 
 /* Footer */
+#footer-nav{
+    background: rgb(28,54,67);
+    background: linear-gradient(90deg, rgba(28,54,67,1) 0%, rgba(30,83,113,1) 100%);
+}
+#footer-nav > .nav > .nav-item > .nav-link{
+    border-radius: 8px;
+}
+#footer-nav > .nav > .nav-item > .nav-link:hover{
+    background-color: rgb(36, 126, 179);
+}
 @media screen and (max-width:1024px){
     #footer-nav > .nav{
         gap: 1rem !important;
