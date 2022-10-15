@@ -6,8 +6,7 @@
 </ul>
 </div>
 <div>
-<p> El proyecto consiste en varias partes: en la primera parte se deberá replicar la página principal que se encuentra debajo 
-utilizando las herramientas aprendiendas durante la cursada (HTML, CSS & Bootstrap).
+<p> El proyecto consiste en varias partes: en la primera parte se deberá replicar la página principal que se encuentra debajo utilizando las herramientas aprendiendas durante la cursada <i>(HTML, CSS & Bootstrap)</i>. En la segunda parte se debe colocar un formulario donde se pueda tomar datos de una persona (nombre, apellido y email) y en base a una cantidad, calcular el valor final aplicando o no los descuentos disponibles, esta parte se puede colocar a libre elección <i>(nuevo HTML, insertado en la misma página, etc)</i>, en mi caso opté por una <b>ventana modal</b> de Bootstrap.
 </p>
 <div align="center">
 <img src="https://i.ibb.co/FKcK2Sn/imagen-final.jpg" longdesc="" width="504" height="785">
