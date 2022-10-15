@@ -77,7 +77,7 @@
         margin-left: 1rem;
     }
 }
-@media screen and (max-width:830px){
+@media screen and (max-width:824px){
     .banner > .img-fluid{
         width: 200vh;
         height: 75vh;
@@ -93,31 +93,42 @@
         margin-bottom: -27vh;
     }
 }
-@media (max-width:830px) and (max-height:425px){
+@media (max-width:824px) and (max-height:768px){
     .banner-text{
-        bottom: 59vh;
+        bottom: 15vh;
+    }
+}
+@media (max-width:824px) and (max-height:425px){
+    .banner-text{
+        bottom: 15vh;
     }
     #banner-header{
         margin-bottom: -50vh;
     }
 }
-@media (max-width:830px) and (max-height:375px){
+@media (max-width:824px) and (max-height:375px){
     .banner > .img-fluid{
         width: 275vh;
     }
     .banner-text{
-        bottom: 68vh;
+        bottom: 5vh;
+    }
+    .banner-text .fs-2{
+        font-size: 22px!important;
+    }
+    .banner-text #bannerMainText{
+        font-size: 17px!important;
     }
     #banner-header{
         margin-bottom: -58vh;
     }
 }
-@media (max-width:830px) and (max-height:320px){
+@media (max-width:824px) and (max-height:320px){
     .banner > .img-fluid{
         height: 105vh;
     }
     .banner-text{
-        bottom: 77vh;
+        bottom: 0vh;
     }
     #banner-header{
         margin-bottom: -70vh;
@@ -204,7 +215,7 @@
 .modal-dialog-scrollable .modal-content {
     width: 75vw!important;
     height: 72vh;
-  }
+}
 .box-categoria{
     border: 1px solid black;
     width: 40vw;
@@ -270,27 +281,63 @@
         height: 45vh;
     }
 }
-@media (max-width:830px) and (max-height:768px){
+@media (max-width:824px) and (max-height:768px){
     #cards{
         gap: 1!important;
     }
     #btnFormEnviar{
         --bs-btn-padding-x: 45.8vw;
     }
+    #cards{
+        gap: 0.5rem!important;
+        justify-content: space-around!important;
+    }
+    #cards > .card{
+        --bs-card-spacer-y: 0.5rem;
+        --bs-card-spacer-x: 0.5rem;
+        margin-bottom: 0.75vh;
+    }
+    #cards > .card > .card-img-top{
+        height: 245px;
+    }
+    #cards > .card > .card-body > .btn-custom{
+        margin-bottom: 0.5rem;
+    }
+    #cards > .card > .card-body > h5{
+        margin-bottom: 0.2rem;
+    }
+    #cards > .card > .card-body > .card-text{
+        overflow-wrap: break-word;
+    }
+    .modal-dialog-scrollable .modal-content {
+        left: 4.6rem;
+        width: 75vw!important;
+        height: 83vh;
+    }
+    .modal-dialog-centered .modal-content{
+        left: 4.6rem;
+        width: 75vw!important;
+    }
 }
-@media (max-width:830px) and (max-height:425px){
+@media (max-width:824px) and (max-height:425px){
     #img-grid-main{
         height: 81vh;
     }
+    #valor-final{
+        height: 2.5rem;
+    }
 }
-@media (max-width:830px) and (max-height:375px){
+@media (max-width:824px) and (max-height:375px){
     #img-grid-main{
         height: 91vh;
     }
 }
-@media (max-width:830px) and (max-height:320px){
+@media (max-width:824px) and (max-height:320px){
     #img-grid-main{
         height: 107vh;
+    }
+    main > div > .fs-6{
+        padding-top: 13vh!important;
     }
 }
 @media screen and (max-width:768px){
@@ -321,6 +368,15 @@
     #btnFormEnviar{
         --bs-btn-padding-x: 45.4vw;
     }
+    .modal-dialog-scrollable .modal-content {
+        left: 5.5rem;
+        width: 75vw!important;
+        height: 78vh;
+    }
+    .modal-dialog-centered .modal-content{
+        left: 5.5rem;
+        width: 75vw!important;
+    }
 }
 @media screen and (max-width:425px){
     #cards{
@@ -346,6 +402,18 @@
     #btnFormEnviar{
         --bs-btn-padding-x: 41.8vw;
     }
+    .modal{
+        --bs-modal-width: 500px;
+    }
+    .modal-dialog-scrollable .modal-content {
+        left: -0.2vw;
+        width: 50vw!important;
+        height: 78vh;
+    }
+    .modal-dialog-centered .modal-content{
+        left: -0.2vw;
+        width: 100vw!important;
+    }
 }
 @media screen and (max-width:375px){
     #cards{
@@ -370,6 +438,9 @@
     }
     #btnFormEnviar{
         --bs-btn-padding-x: 39vw;
+    }
+    #categorias-descuento{
+        margin-left: -8px;
     }
 }
 
