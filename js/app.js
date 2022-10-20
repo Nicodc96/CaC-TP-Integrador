@@ -1,40 +1,10 @@
-/* Boxes descuento - Funcionalidad como botones */
-const $contenedorDescuentos = document.querySelector("#categorias-descuento");
-const $selectCategorias = document.querySelector("#form-categorias");
-const $boxEstudiante = document.querySelector("#box-estudiante");
-const $boxTrainee = document.querySelector("#box-trainee");
-const $boxJunior = document.querySelector("#box-junior");
-
-ElegirCategoria($boxEstudiante, 1);
-ElegirCategoria($boxTrainee, 2);
-ElegirCategoria($boxJunior, 3);
-
-$contenedorDescuentos.addEventListener("click", e => {
-    if (e.target.matches("#box-estudiante")){
-        $selectCategorias.value = 1;
-    }
-    if(e.target.matches("#box-trainee")){
-        $selectCategorias.value = 2;
-    }
-    if(e.target.matches("#box-junior")){
-        $selectCategorias.value = 3;
-    }
-});
-
-function ElegirCategoria(emisor, numeroCategoria){
-    emisor.addEventListener("click", event => {
-        if (event.target.matches(".text-center")){
-            $selectCategorias.value = numeroCategoria;
-        }
-    })
-}
-/* ------------------------------------------------- */
-
+import { createModalTickets } from "./dynamicModal.js";
 /* Formulario */
-const $formTickets = document.querySelector("#form-tickets");
-const $inputTotal = document.querySelector("#valor-final");
 const $modalError = document.querySelector("#modal-error");
-const $modalTickets = document.querySelector("#staticModalTicket");
+const $contenedorModalTicket = document.querySelector("#modalTickets");
+const $modalTickets = createModalTickets();
+$contenedorModalTicket.appendChild($modalTickets);
+const $formTickets = document.forms[1];
 const $modalBodyError = document.querySelector("#modal-error-body");
 const $textNode = document.createElement("p");
 $modalBodyError.appendChild($textNode);
@@ -43,7 +13,7 @@ const $inputCantidad = document.querySelector("#form-cantidad");
 const $inputStaticValorFinal = document.querySelector("#valor-final");
 const $optionList = document.querySelector("#form-categorias");
 
-window.addEventListener("click", (e) => {
+$modalTickets.addEventListener("click", (e) => {
     if (e.target.matches("#form-btn-resumen")){
         e.preventDefault();
         if (ValidarCampos() == -1){
@@ -127,7 +97,7 @@ window.addEventListener("click", (e) => {
             }
         })
     }    
-})
+});
 function ValidarCampos(){
     const $inputNombre = document.querySelector("#form-nombre");
     const $inputApellido = document.querySelector("#form-apellido");
@@ -147,4 +117,39 @@ function ValidarEmail(inputEmail){
         || inputEmail.value.split(".")[1].length == 0)
 }
 
+/* ------------------------------------------------- */
+/* Boxes descuento - Funcionalidad como botones */
+const $contenedorDescuentos = document.querySelector("#categorias-descuento");
+const $selectCategorias = document.querySelector("#form-categorias");
+const $boxEstudiante = document.querySelector("#box-estudiante");
+const $boxTrainee = document.querySelector("#box-trainee");
+const $boxJunior = document.querySelector("#box-junior");
+
+ElegirCategoria($boxEstudiante, 1);
+ElegirCategoria($boxTrainee, 2);
+ElegirCategoria($boxJunior, 3);
+
+if ($contenedorDescuentos != null){
+    $contenedorDescuentos.addEventListener("click", e => {
+        if (e.target.matches("#box-estudiante")){
+            $selectCategorias.value = 1;
+        }
+        if(e.target.matches("#box-trainee")){
+            $selectCategorias.value = 2;
+        }
+        if(e.target.matches("#box-junior")){
+            $selectCategorias.value = 3;
+        }
+    });
+}
+
+function ElegirCategoria(emisor, numeroCategoria){
+    if (emisor != null){
+        emisor.addEventListener("click", event => {
+            if (event.target.matches(".text-center")){
+                $selectCategorias.value = numeroCategoria;
+            }
+        });
+    }
+}
 /* ------------------------------------------------- */
