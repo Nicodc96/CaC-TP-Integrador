@@ -1,21 +1,14 @@
 function createModalTickets(){
-    const $modalPrincipal = document.createElement("div");
     /* Div modal principal */
-    $modalPrincipal.setAttribute("id", "staticModalTicket");
-    $modalPrincipal.setAttribute("data-bs-backdrop", "static");
-    $modalPrincipal.setAttribute("data-bs-keyboard", "false");
-    $modalPrincipal.setAttribute("tabindex", "-1");
-    $modalPrincipal.setAttribute("aria-labelledby", "staticBackdropLabel");
-    $modalPrincipal.setAttribute("aria-hidden", "hidden");
-    $modalPrincipal.classList.add("modal", "fade");
-    /* ------------------- */
-    const $modalDialog = document.createElement("div");
-    $modalPrincipal.appendChild($modalDialog);
+    const $modalPrincipal = createElementCustom("div", ["modal", "fade"], "", {
+        "id":"staticModalTicket", "data-bs-backdrop":"static", "data-bs-keyboard":"false", "tabindex":"-1",
+        "aria-labelledby":"staticBackdropLabel", "aria-hidden":"hidden"
+    });
     /* Div modal dialog */
-    $modalDialog.classList.add("modal-dialog", "modal-dialog-centered", "modal-dialog-scrollable");
+    const $modalDialog = createElementCustom("div", ["modal-dialog", "modal-dialog-centered", "modal-dialog-scrolleable"], "", {});
+    $modalPrincipal.appendChild($modalDialog);
     /* Div modal content */
-    const $modalContent = document.createElement("div");
-    $modalContent.classList.add("modal-content");
+    const $modalContent = createElementCustom("div", ["modal-content"], "", {});
     $modalDialog.appendChild($modalContent);
     /* Agrego los elementos creados al modal content */    
     $modalContent.appendChild(modalHeaderTicket());
@@ -26,34 +19,18 @@ function createModalTickets(){
 }
 
 function modalHeaderTicket(){
-    const $modalHeader = document.createElement("div");
-    const $h1 = document.createElement("h1");
-    const $botonCerrar = document.createElement("button");
-    // ---------------- //
-    $h1.classList.add("modal-title", "fs-5");
-    $h1.setAttribute("id", "staticBackdropLabel");
-    $h1.textContent = "Compre su Ticket:";
-    // ---------------- //
-    $botonCerrar.classList.add("btn-close");
-    $botonCerrar.setAttribute("data-bs-dismiss", "modal");
-    $botonCerrar.setAttribute("aria-label", "close");
-    // ---------------- //
-    $modalHeader.classList.add("modal-header");
-    $modalHeader.appendChild($h1);
-    $modalHeader.appendChild($botonCerrar);
+    const $modalHeader = createElementCustom("div", ["modal-header"], "", {});
+    $modalHeader.appendChild(createElementCustom("h1", ["modal-title", "fs-5"], "Compre su Ticket:", {"id":"staticBackdropLabel"}));
+    $modalHeader.appendChild(createElementCustom("button", ["btn-close"], "", {"data-bs-dismiss":"modal", "aria-label":"close"}));
     return $modalHeader;
 }
 
 function modalBodyTicket(){
-    const $modalBody = document.createElement("div");
+    const $modalBody = createElementCustom("div", ["modal-body"], "", {});
     // ---------------- //
-    const $divContenedorCategorias = document.createElement("div");
-    $divContenedorCategorias.classList.add("d-flex", "gap-1");
-    $divContenedorCategorias.setAttribute("id", "categorias-descuento");
+    const $divContenedorCategorias = createElementCustom("div", ["d-flex", "gap-1"], "", {"id":"categorias-descuento"});
     for (let i = 0; i < 3; i++){
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("box-categoria");
-        $divContenedorCategorias.appendChild(newDiv);
+        $divContenedorCategorias.appendChild(createElementCustom("div", ["box-categoria"], "", {}));
     }
     $divContenedorCategorias.childNodes[0].classList.add("categoria-estudiante");
     $divContenedorCategorias.childNodes[1].classList.add("categoria-trainee");
@@ -83,113 +60,75 @@ function modalBodyTicket(){
         }
     });
     // ---------------- //
-    const $formularioTicket = document.createElement("form");
-    $formularioTicket.setAttribute("id", "form-tickets");
+    const $formularioTicket = createElementCustom("form", [], "", {"id":"form-tickets"});
     for (let i = 0; i < 4; i++){
         if (i == 0){
-            let divRow = document.createElement("div");
-            divRow.classList.add("row");
-            $formularioTicket.appendChild(divRow);
+            $formularioTicket.appendChild(createElementCustom("div", ["row"], "", {}));
         } else{
-            let divRowPt3 = document.createElement("div");
-            divRowPt3.classList.add("row", "pt-3");
-            $formularioTicket.appendChild(divRowPt3);
+            $formularioTicket.appendChild(createElementCustom("div", ["row", "pt-3"], "", {}));
         }
     }
     $formularioTicket.childNodes.forEach((nodo) => {
         if (!nodo.classList.contains("pt-3")){
-            const $divColName = document.createElement("div");
-            const $inputName = document.createElement("input");
-            $divColName.classList.add("col", "col-name");
-            $inputName.classList.add("form-control");
-            $inputName.setAttribute("type", "text");
-            $inputName.setAttribute("placeholder", "Nombre");
-            $inputName.setAttribute("id", "form-nombre");
+            const $divColName = createElementCustom("div", ["col", "col-name"], "", {});
+            const $inputName = createElementCustom("input", ["form-control"], "", {
+                "type":"text", "placeholder":"Nombre", "id":"form-nombre"
+            });
             $divColName.appendChild($inputName);
             // --------------- //
-            const $divColApellido = document.createElement("div");
-            const $inputApellido = document.createElement("input");
-            $divColApellido.classList.add("col", "col-surname");
-            $inputApellido.classList.add("form-control");
-            $inputApellido.setAttribute("type", "text");
-            $inputApellido.setAttribute("placeholder", "Apellido");
-            $inputApellido.setAttribute("id", "form-apellido");
+            const $divColApellido = createElementCustom("div", ["col", "col-surname"], "", {})
+            const $inputApellido = createElementCustom("input", ["form-control"], "", {
+                "type":"text", "placeholder":"Apellido", "id":"form-apellido"
+            });
             $divColApellido.appendChild($inputApellido);
             // --------------- //
             nodo.appendChild($divColName);
             nodo.appendChild($divColApellido);
         } else{
-            let $divCol = document.createElement("div");
-            $divCol.classList.add("col");
-            nodo.appendChild($divCol);
+            nodo.appendChild(createElementCustom("div", ["col"], "", {}));
         }
     });
     $formularioTicket.childNodes[1].childNodes.forEach((nodo) => {
-        const $inputEmail = document.createElement("input");
-        $inputEmail.classList.add("form-control");
-        $inputEmail.setAttribute("type", "email");
-        $inputEmail.setAttribute("placeholder", "Correo");
-        $inputEmail.setAttribute("id", "form-email");
-        nodo.appendChild($inputEmail);
+        nodo.appendChild(createElementCustom("input", ["form-control"], "", {
+            "type":"email", "placeholder":"Correo", "id":"form-email"
+        }));
     });
     $formularioTicket.childNodes[2].appendChild(document.createElement("div"));
     $formularioTicket.childNodes[2].childNodes.forEach((nodo) => {
         if (nodo.classList.contains("col")){
-            const $labelCantidad = document.createElement("label");
-            const $inputCantidad = document.createElement("input");
-            $labelCantidad.setAttribute("for", "form-cantidad");
-            $labelCantidad.textContent = "Cantidad:";
-            $inputCantidad.classList.add("form-control");
-            $inputCantidad.setAttribute("type", "number");
-            $inputCantidad.setAttribute("placeholder", "Cantidad");
-            $inputCantidad.setAttribute("id", "form-cantidad");
-            $inputCantidad.setAttribute("min", "0");
-            $inputCantidad.setAttribute("value", "1");
-            nodo.appendChild($labelCantidad);
-            nodo.appendChild($inputCantidad);
+            nodo.appendChild(createElementCustom("label", [], "Cantidad:", {"for":"form-cantidad"}));
+            nodo.appendChild(createElementCustom("input", ["form-control"], "", {
+                "type":"number", "placeholder":"Cantidad", "id":"form-cantidad", "min":"0", "value":"1"
+            }));
         } else{
             nodo.classList.add("col");
-            const $labelCategoria = document.createElement("label");
-            const $selectCategoria = document.createElement("select");
-            $labelCategoria.setAttribute("for", "form-categorias");
-            $labelCategoria.textContent = "Categoría:";
-            $selectCategoria.classList.add("form-select");
-            $selectCategoria.setAttribute("id", "form-categorias");
+            const $selectCategoria = createElementCustom("select", ["form-select"], "", {"id":"form-categorias"});
             for(let i = 0; i < 4; i++){
-                let $option = document.createElement("option");
-                $option.setAttribute("value", i);
                 switch (i){
                     case 0:
-                    $option.setAttribute("selected", "");
-                    $option.textContent = "Sin categoría";
-                    break;
+                        $selectCategoria.appendChild(createElementCustom("option", [], "Sin categoría", {"value":i, "selected":""}));
+                        break;
                     case 1:
-                        $option.textContent = "Estudiante";
+                        $selectCategoria.appendChild(createElementCustom("option", [], "Estudiante", {"value":i}));
                         break;
                     case 2:
-                        $option.textContent = "Trainee";
+                        $selectCategoria.appendChild(createElementCustom("option", [], "Trainee", {"value":i}));
                         break;
                     case 3:
-                        $option.textContent = "Junior";
+                        $selectCategoria.appendChild(createElementCustom("option", [], "Junior", {"value":i}));
                         break;
                 }
-                $selectCategoria.appendChild($option);
             }
-            nodo.appendChild($labelCategoria);
+            nodo.appendChild(createElementCustom("label", [], "Categoría:", {"for":"form-categorias"}));
             nodo.appendChild($selectCategoria);
         }
     });
     $formularioTicket.childNodes[3].childNodes.forEach((nodo) => {
-        const $inputTextPlano = document.createElement("input");
-        $inputTextPlano.classList.add("form-control-plaintext");
-        $inputTextPlano.setAttribute("type", "text");
-        $inputTextPlano.setAttribute("id", "valor-final");
-        $inputTextPlano.setAttribute("value", "Total a pagar: $");
-        $inputTextPlano.setAttribute("readonly", "");
-        nodo.appendChild($inputTextPlano);
+        nodo.appendChild(createElementCustom("input", ["form-control-plaintext"], "", {
+            "type":"text", "id":"valor-final", "value":"Total a pagar: $", "readonly":""
+        }));
     });
     // ---------------- //
-    $modalBody.classList.add("modal-body");
     $modalBody.appendChild($divContenedorCategorias);
     $modalBody.appendChild(createElementCustom("p", ["fs-6", "text-uppercase", "lh-base", "text-center", "mt-2", "mb-0"], "venta", {}));
     $modalBody.appendChild(createElementCustom("p", ["fs-1", "text-uppercase", "lh-base", "text-center", "fw-semibold", "mt-0", "mb-0"], "valor de ticket $200", {}));
@@ -199,8 +138,7 @@ function modalBodyTicket(){
 
 
 function modalFooterTicket(){
-    const $modalFooter = document.createElement("div");
-    $modalFooter.classList.add("modal-footer", "d-flex", "justify-content-center", "gap-2");
+    const $modalFooter = createElementCustom("div", ["modal-footer", "d-flex", "justify-content-center", "gap-2"], "", {});
     $modalFooter.appendChild(createElementCustom("button", ["btn", "btn-success"], "Borrar", {"id":"form-btn-borrar"}));
     $modalFooter.appendChild(createElementCustom("button", ["btn", "btn-success"], "Resumen", {"id":"form-btn-resumen"}));
     return $modalFooter;
@@ -221,5 +159,4 @@ function createElementCustom(tipoElemento, clases, contenidoTexto, atributos){
     }
     return newElement;
 }
-
 export {createModalTickets};
