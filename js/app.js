@@ -1,4 +1,5 @@
-import { createModalTickets } from "./dynamicModal.js";
+import { createModalTickets, createElementCustom } from "./dynamicModal.js";
+import { validarEmail, validarNomApe } from "./validaciones.js";
 /* Formulario */
 const $modalError = document.querySelector("#modal-error");
 const $contenedorModalTicket = document.querySelector("#modalTickets");
@@ -6,25 +7,40 @@ const $modalTickets = createModalTickets();
 $contenedorModalTicket.appendChild($modalTickets);
 const $formTickets = document.forms[1];
 const $modalBodyError = document.querySelector("#modal-error-body");
-const $textNode = document.createElement("p");
-$modalBodyError.appendChild($textNode);
+const $textNode1 = createElementCustom("p", [], "", {});
+const $textNode2 = createElementCustom("p", [], "", {});
+const $textNode3 = createElementCustom("p", [], "", {});
+const $textNode4 = createElementCustom("p", [], "", {});
+$modalBodyError.appendChild($textNode1);
+$modalBodyError.appendChild($textNode2);
+$modalBodyError.appendChild($textNode3);
+$modalBodyError.appendChild($textNode4);
 const newModal = new bootstrap.Modal("#modal-error", {keyboard: false});
 const $inputCantidad = document.querySelector("#form-cantidad");
 const $inputStaticValorFinal = document.querySelector("#valor-final");
 const $optionList = document.querySelector("#form-categorias");
+const $inputNombre = document.querySelector("#form-nombre");
+const $inputApellido = document.querySelector("#form-apellido");
+const $inputEmail = document.querySelector("#form-email");
 
 $modalTickets.addEventListener("click", (e) => {
     if (e.target.matches("#form-btn-resumen")){
         e.preventDefault();
-        if (ValidarCampos() == -1){
-            $textNode.textContent = "¡Los campos nombre y apellido no deben estar vacíos!";
+        if (validarNomApe($inputNombre) == -1 || validarNomApe($inputApellido) == -1){
+            $textNode1.textContent = "Los campos nombre y apellido deben tener:";
+            $textNode2.textContent = "- Mínimo 3 caracteres y máximo 24.";
+            $textNode3.textContent = "- Puede contener acentos y mayúsculas.";
+            $textNode4.textContent = "";
             newModal.show($modalError);
             $modalTickets.classList.add("background-hidden");
             $modalError.addEventListener("hide.bs.modal", () => {
                 $modalTickets.classList.remove("background-hidden");
             });
-        } else if (ValidarCampos() == -2){
-            $textNode.textContent = "¡Se debe ingresar un email válido!";
+        } else if (validarEmail($inputEmail) == -1){
+            $textNode1.textContent = "El campo email debe cumplir los siguientes requisitos:";
+            $textNode2.textContent = "- Debe tener @.";
+            $textNode3.textContent = "- Debe contener un dominio correcto.";
+            $textNode4.textContent = "- No debe tener puntos el nombre del correo.";
             newModal.show($modalError);
             $modalTickets.classList.add("background-hidden");
             $modalError.addEventListener("hide.bs.modal", () => {
@@ -32,7 +48,7 @@ $modalTickets.addEventListener("click", (e) => {
             });
         } else{
             if (parseInt($inputCantidad.value) < 0){
-                $textNode.textContent = "No es posible calcular el valor final en base a una cantidad negativa.";
+                $textNode1.textContent = "No es posible calcular el valor final en base a una cantidad negativa.";
                 newModal.show($modalError);
                 $modalTickets.classList.add("background-hidden");
                 $modalError.addEventListener("hide.bs.modal", () => {
@@ -95,29 +111,10 @@ $modalTickets.addEventListener("click", (e) => {
                     }
                 })
             }
-        })
-    }    
-});
-function ValidarCampos(){
-    const $inputNombre = document.querySelector("#form-nombre");
-    const $inputApellido = document.querySelector("#form-apellido");
-    const $inputEmail = document.querySelector("#form-email");
-    if ($inputNombre.value.length == 0 || $inputApellido.value.length == 0){
-        return -1;
-    } else if(ValidarEmail($inputEmail)){
-        return -2;
+        });
     }
-}
+});
 
-function ValidarEmail(inputEmail){
-    return (inputEmail.value.length == 0 
-        || inputEmail.value.split("@")[1] == undefined 
-        || inputEmail.value.split("@")[1].length == 0
-        || inputEmail.value.split(".")[1] == undefined
-        || inputEmail.value.split(".")[1].length == 0)
-}
-
-/* ------------------------------------------------- */
 /* Boxes descuento - Funcionalidad como botones */
 const $contenedorDescuentos = document.querySelector("#categorias-descuento");
 const $selectCategorias = document.querySelector("#form-categorias");
@@ -129,19 +126,17 @@ ElegirCategoria($boxEstudiante, 1);
 ElegirCategoria($boxTrainee, 2);
 ElegirCategoria($boxJunior, 3);
 
-if ($contenedorDescuentos != null){
-    $contenedorDescuentos.addEventListener("click", e => {
-        if (e.target.matches("#box-estudiante")){
-            $selectCategorias.value = 1;
-        }
-        if(e.target.matches("#box-trainee")){
-            $selectCategorias.value = 2;
-        }
-        if(e.target.matches("#box-junior")){
-            $selectCategorias.value = 3;
-        }
-    });
-}
+$contenedorDescuentos.addEventListener("click", e => {
+    if (e.target.matches("#box-estudiante")){
+        $selectCategorias.value = 1;
+    }
+    if(e.target.matches("#box-trainee")){
+        $selectCategorias.value = 2;
+    }
+    if(e.target.matches("#box-junior")){
+        $selectCategorias.value = 3;
+    }
+});
 
 function ElegirCategoria(emisor, numeroCategoria){
     if (emisor != null){
@@ -152,4 +147,3 @@ function ElegirCategoria(emisor, numeroCategoria){
         });
     }
 }
-/* ------------------------------------------------- */
