@@ -136,7 +136,6 @@ function modalBodyTicket(){
     return $modalBody;
 }
 
-
 function modalFooterTicket(){
     const $modalFooter = createElementCustom("div", ["modal-footer", "d-flex", "justify-content-center", "gap-2"], "", {});
     $modalFooter.appendChild(createElementCustom("button", ["btn", "btn-success"], "Borrar", {"id":"form-btn-borrar"}));
@@ -159,4 +158,4 @@ function createElementCustom(tipoElemento, clases, contenidoTexto, atributos){
     }
     return newElement;
 }
-export {createModalTickets};
+export {createModalTickets, createElementCustom};
