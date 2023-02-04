@@ -94,7 +94,7 @@
               </div>
             </section>
         </section>
-        <section id="main-form">
+        <article id="main-form">
             <div>
                 <p class="fs-6 text-uppercase lh-base text-center mt-2 mb-0">conviértete en un</p>
                 <p class="fs-1 text-uppercase lh-base fw-semibold text-center mt-0 mb-0">orador</p>
@@ -125,25 +125,102 @@
                     </div>
                 </div>
             </form>
-        </section>
-        <section id="modalTickets">
-        </section>
-        <section id="modalError">
-            <div class="modal fade" id="modal-error" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalError" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="modalError-titulo">Error en los datos:</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </article>
+        <section id="modalForms">
+            <article id="modalTickets">
+                <div class="modal fade" id="staticModalTicket" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="hidden">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrolleable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title fs-5" id="staticBackdropLabel">
+                                    <p>Compre su Ticket:</p>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex gap-1" id="categorias-descuento">
+                                    <div class="box-categoria categoria-estudiante" id="box-estudiante">
+                                        <p class="text-center fw-semibold pt-3">Estudiante</p>
+                                        <p class="text-center">Tienen un descuento</p>
+                                        <p class="text-center fw-bold">80%</p>
+                                        <p class="text-center text-secondary text-documentacion">* presentar documentación</p>
+                                    </div>
+                                    <div class="box-categoria categoria-trainee" id="box-trainee">
+                                        <p class="text-center fw-semibold pt-3">Trainee</p>
+                                        <p class="text-center">Tienen un descuento</p>
+                                        <p class="text-center fw-bold">50%</p>
+                                        <p class="text-center text-secondary text-documentacion">* presentar documentación</p>
+                                    </div>
+                                    <div class="box-categoria categoria-junior" id="box-junior">
+                                        <p class="text-center fw-semibold pt-3">Junior</p>
+                                        <p class="text-center">Tienen un descuento</p>
+                                        <p class="text-center fw-bold">15%</p>
+                                        <p class="text-center text-secondary text-documentacion">* presentar documentación</p>
+                                    </div>
+                                </div>
+                                <p class="fs-6 text-uppercase lh-base text-center mt-2 mb-0">venta</p>
+                                <p class="fs-1 text-uppercase lh-base text-center fw-semibold mt-0 mb-0">valor de ticket $200</p>
+                                <form id="form-tickets">
+                                    <div class="row">
+                                        <div class="col col-name">
+                                            <input type="text" id="form-nombre" class="form-control" placeholder="Nombre">
+                                        </div>
+                                        <div class="col col-surname">
+                                            <input type="text" id="form-apellido" class="form-control" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3">
+                                        <div class="col">
+                                            <input type="email" placeholder="Correo" id="form-email" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3">
+                                        <div class="col">
+                                            <label for="form-cantidad">Cantidad:</label>
+                                            <input type="number" class="form-control" placeholder="Cantidad" id="form-cantidad" min="0" value="1">
+                                        </div>
+                                        <div class="col">
+                                            <label for="form-categorias">Categoría:</label>
+                                            <select class="form-select" id="form-categorias">
+                                                <option value="0" selected>Sin categoría</option>
+                                                <option value="1">Estudiante</option>
+                                                <option value="2">Trainee</option>
+                                                <option value="3">Junior</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3">
+                                        <div class="col">
+                                            <input type="text" class="form-control-plaintext" value="Total a pagar: $" id="valor-final" readonly>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center gap-2">
+                                <button class="btn btn-success" id="form-btn-borrar">Borrar</button>
+                                <button class="btn btn-success" id="form-btn-resumen">Resumen</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body" id="modal-error-body">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </article>
+            <article id="modalError">
+                <div class="modal fade" id="modal-error" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalError" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="modalError-titulo">Error en los datos:</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-error-body">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+            </article>
         </section>
     </main>
     <footer>
