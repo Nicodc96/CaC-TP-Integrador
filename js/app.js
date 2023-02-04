@@ -36,16 +36,20 @@ $modalTicket.addEventListener("click", (e) => {
     if (e.target.matches("#form-btn-resumen")){
         e.preventDefault();
         if (validarNomApe($inputNombre) == -1 || validarNomApe($inputApellido) == -1){
+            // Si falla al validar nombre o apellido, muestro el modal error con el texto correspondiente
             textoValidarNomApe($pText1, $pText2, $pText3, $pText4);
             mostrarModalError($modalError, $modalTicket, newModal);
         } else if (validarEmail($inputEmail) == -1){
+            // Si falla al validar email, muestro el modal error con el texto correspondiente
             textoValidarEmail($pText1, $pText2, $pText3, $pText4);
             mostrarModalError($modalError, $modalTicket, newModal);
         } else{
             if (parseInt($inputCantidad.value) < 0){
+                // Si falla al validar cantidad positiva, muestro el modal error con el texto correspondiente
                 textoValidarNegativo($pText1, $pText2, $pText3, $pText4);
                 mostrarModalError($modalError, $modalTicket, newModal);
             } else{
+                // Si pasa las validaciones, realizo el cálculo correspondiente según cada descuento
                 setValorFinalPorCategoria($optionList, $inputStaticValorFinal, $inputCantidad);
             }
         }        
