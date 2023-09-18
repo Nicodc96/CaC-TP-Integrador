@@ -42,7 +42,7 @@ const textoValidarNegativo = (textNode1, textNode2, textNode3, textNode4) => {
     textNode4.textContent = "";
 }
 const elegirCategoria = (emisor, numeroCategoria, referenciaSelectCategorias) => {
-    if (emisor != null){
+    if (emisor){
         emisor.addEventListener("click", event => {
             if (event.target.matches(".text-center")){
                 referenciaSelectCategorias.value = numeroCategoria;
@@ -59,7 +59,7 @@ const mostrarModalError = (referenciaModalError, referenciaModalTicket, nuevoMod
 }
 const setValorFinalPorCategoria = (referenciaOptionList, referenciaInputValorFinal, referenciaInputCantidad) => {
     referenciaInputValorFinal.value = "Total a pagar: $";
-    let valorFinalBruto = parseInt(referenciaInputCantidad.value) * 200;
+    let valorFinalBruto = Number(referenciaInputCantidad.value) * 200;
     switch (referenciaOptionList.selectedIndex){
         case 0:
             referenciaInputValorFinal.value += valorFinalBruto;
@@ -76,4 +76,11 @@ const setValorFinalPorCategoria = (referenciaOptionList, referenciaInputValorFin
     }
 }
 
-export {addCustomPToModalError, createElementCustom, textoValidarNomApe, textoValidarEmail, textoValidarNegativo, elegirCategoria, mostrarModalError, setValorFinalPorCategoria}
+export { addCustomPToModalError, 
+    createElementCustom, 
+    textoValidarNomApe, 
+    textoValidarEmail, 
+    textoValidarNegativo, 
+    elegirCategoria, 
+    mostrarModalError, 
+    setValorFinalPorCategoria }
