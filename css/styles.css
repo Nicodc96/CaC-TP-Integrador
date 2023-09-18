@@ -1,11 +1,10 @@
 /* Header */
-
 .bg-header{
     --bs-bg-opacity:1;
     background-color:rgba(53,58,64,255)!important;
 }
 .navbar-nav{
-    gap: 0.5vh;
+    gap: 15px;
 }
 #navbarHeader > .container-fluid > .navbar-brand{
     margin-left: 10vh;
@@ -45,12 +44,15 @@
     position: relative;
     filter: brightness(40%);
     width: 100%;
-    height: 75vh;
+}
+#banner-header,
+.banner{
+    height: 700px;
 }
 .banner-text{
     position: absolute;
     left: 50vw;
-    bottom: 35vh;
+    bottom: 300px;
     right: 10vw;
     color: white;
     text-align: right;
@@ -62,122 +64,9 @@
 .btn-success:hover{
     background-color: #117226!important;
 }
-@media screen and (max-width:1300px){
-    .banner-text{
-        position: absolute;
-        left: 50vw;
-        bottom: 25vh;
-        right: 10vw;
-        color: white;
-        text-align: right;
-    }
-}
-@media screen and (max-width:1024px){
-    #navbarHeader > .container-fluid > .navbar-brand{
-        margin-left: 1rem;
-    }
-}
-@media screen and (max-width:824px){
-    .banner > .img-fluid{
-        width: 200vh;
-        height: 75vh;
-        object-fit: cover;
-    }
-    .banner-text{
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: 45vh;
-    }
-    #banner-header{
-        margin-bottom: -27vh;
-    }
-}
-@media (max-width:824px) and (max-height:768px){
-    .banner-text{
-        bottom: 15vh;
-    }
-}
-@media (max-width:824px) and (max-height:425px){
-    .banner-text{
-        bottom: 15vh;
-    }
-    #banner-header{
-        margin-bottom: -50vh;
-    }
-}
-@media (max-width:824px) and (max-height:375px){
-    .banner > .img-fluid{
-        width: 275vh;
-    }
-    .banner-text{
-        bottom: 5vh;
-    }
-    .banner-text .fs-2{
-        font-size: 22px!important;
-    }
-    .banner-text #bannerMainText{
-        font-size: 17px!important;
-    }
-    #banner-header{
-        margin-bottom: -58vh;
-    }
-}
-@media (max-width:824px) and (max-height:320px){
-    .banner > .img-fluid{
-        height: 105vh;
-    }
-    .banner-text{
-        bottom: 0vh;
-    }
-    #banner-header{
-        margin-bottom: -70vh;
-    }
-}
-@media screen and (max-width:768px){
-    .banner > .img-fluid{
-        width: 200vh;
-        height: 75vh;
-        object-fit: cover;
-    }
-    .banner-text{
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: 15vh;
-    }
-    #banner-header{
-        margin-bottom: -27vh;
-    }
-    #navbarHeaderLinks > .navbar-nav{
-        align-items: flex-end;
-    }
-}
-@media screen and (max-width:425px){
-    #navbarHeader > .container-fluid > .navbar-brand{
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .banner-text{
-        text-align: right;
-        font-size: smaller;
-    }
-    #bannerMainText{
-        font-size: small!important;
-    }
-    #banner-header{
-        margin-bottom: -24vh;
-    }
-}
-@media screen and (max-width:375px){
-    #banner-header{
-        margin-bottom: -26vh;
-    }
-}
-
 /* Main */
 .card{
-    width: 20rem;
+    width: 20vw;
 }
 .card > .card-img-top{
     height: 325px;
@@ -197,7 +86,7 @@
     border-color: #979899!important;
 }
 #btnFormEnviar{
-    --bs-btn-padding-x: 22.70vw;
+    width: calc(60% - 2%);
     --bs-btn-padding-y: 0.375rem;
     background-color: #96c93e;
     border-color: #7ca82f!important;
@@ -214,7 +103,7 @@
 }
 .modal-dialog-scrollable .modal-content {
     width: 75vw!important;
-    height: 72vh;
+    height: 700px;
 }
 .box-categoria{
     border: 1px solid black;
@@ -251,199 +140,19 @@
 #valor-final{
     background-color: #cce5ff;
     color: #5192e2;
-    height: 5vh;
+    height: 40px;
     border-radius: 8px;
     padding-left: 1vw;
 }
 .background-hidden{
     filter:brightness(45%);
 }
-@media (min-width:1300px) and (max-width:1428px){
-    #btnFormEnviar{
-        --bs-btn-padding-x: 22.2vw;
-    }
+#formContactoRowNA,
+#formContactoRowTA{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
-@media screen and (max-width:1300px){
-    #btnFormEnviar{
-        --bs-btn-padding-x: 22vw;
-    }
-}
-@media screen and (max-width:1024px){
-    #cards{
-        gap: 1rem!important;
-    }
-    #btnFormEnviar{
-        --bs-btn-padding-x: 21.6vw;
-    }
-}
-@media screen and (max-width:830px){
-    #img-grid-main{
-        height: 45vh;
-    }
-}
-@media (max-width:824px) and (max-height:768px){
-    #cards{
-        gap: 1!important;
-    }
-    #btnFormEnviar{
-        --bs-btn-padding-x: 45.8vw;
-    }
-    #cards{
-        gap: 0.5rem!important;
-        justify-content: space-around!important;
-    }
-    #cards > .card{
-        --bs-card-spacer-y: 0.5rem;
-        --bs-card-spacer-x: 0.5rem;
-        margin-bottom: 0.75vh;
-    }
-    #cards > .card > .card-img-top{
-        height: 245px;
-    }
-    #cards > .card > .card-body > .btn-custom{
-        margin-bottom: 0.5rem;
-    }
-    #cards > .card > .card-body > h5{
-        margin-bottom: 0.2rem;
-    }
-    #cards > .card > .card-body > .card-text{
-        overflow-wrap: break-word;
-    }
-    .modal-dialog-scrollable .modal-content {
-        left: 4.6rem;
-        width: 75vw!important;
-        height: 83vh;
-    }
-    .modal-dialog-centered .modal-content{
-        left: 4.6rem;
-        width: 75vw!important;
-    }
-}
-@media (max-width:824px) and (max-height:425px){
-    #img-grid-main{
-        height: 81vh;
-    }
-    #valor-final{
-        height: 2.5rem;
-    }
-}
-@media (max-width:824px) and (max-height:375px){
-    #img-grid-main{
-        height: 91vh;
-    }
-}
-@media (max-width:824px) and (max-height:320px){
-    #img-grid-main{
-        height: 107vh;
-    }
-    main > div > .fs-6{
-        padding-top: 13vh!important;
-    }
-}
-@media screen and (max-width:768px){
-    #cards{
-        gap: 0.5rem!important;
-        justify-content: space-around!important;
-    }
-    #cards > .card{
-        --bs-card-spacer-y: 0.5rem;
-        --bs-card-spacer-x: 0.5rem;
-        margin-bottom: 0.75vh;
-    }
-    #cards > .card > .card-img-top{
-        height: 245px;
-    }
-    #cards > .card > .card-body > .btn-custom{
-        margin-bottom: 0.5rem;
-    }
-    #cards > .card > .card-body > h5{
-        margin-bottom: 0.2rem;
-    }
-    #cards > .card > .card-body > .card-text{
-        overflow-wrap: break-word;
-    }
-    #img-grid-main{
-        height: 42vh;
-    }
-    #btnFormEnviar{
-        --bs-btn-padding-x: 45.4vw;
-    }
-    .modal-dialog-scrollable .modal-content {
-        left: 5.5rem;
-        width: 75vw!important;
-        height: 78vh;
-    }
-    .modal-dialog-centered .modal-content{
-        left: 5.5rem;
-        width: 75vw!important;
-    }
-}
-@media screen and (max-width:425px){
-    #cards{
-        display: block!important;
-        padding-left: 15vw!important;
-        padding-right: 10vw!important;
-        padding-top: 2vh!important;
-    }
-    #cards > .card{
-        width: 18rem;
-        margin-bottom: 0.75vh;
-        height: auto;
-    }
-    #div-row1-maingrid > * {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-    #div-row2-maingrid{
-        border-left: 0px!important;
-        border-top: var(--bs-border-width) var(--bs-border-style) #979899 !important;
-        padding-bottom: 1.5vh;
-    }
-    #btnFormEnviar{
-        --bs-btn-padding-x: 41.8vw;
-    }
-    .modal{
-        --bs-modal-width: 500px;
-    }
-    .modal-dialog-scrollable .modal-content {
-        left: -0.2vw;
-        width: 50vw!important;
-        height: 78vh;
-    }
-    .modal-dialog-centered .modal-content{
-        left: -0.2vw;
-        width: 100vw!important;
-    }
-}
-@media screen and (max-width:375px){
-    #cards{
-        padding-left: 13vw!important;
-        padding-right: 13vw!important;
-    }
-    #cards > .card{
-        width: 17rem;
-        height: 30rem;
-    }
-    #cards > .card > .card-body{
-        font-size: 12px;
-    }
-    #btnFormEnviar{
-        --bs-btn-padding-x: 40.8vw;
-    }
-}
-@media screen and (max-width:320px){
-    #cards{
-        padding-left: 7vw!important;
-        padding-right: 7vw!important;
-    }
-    #btnFormEnviar{
-        --bs-btn-padding-x: 39vw;
-    }
-    #categorias-descuento{
-        margin-left: -8px;
-    }
-}
-
 /* Footer */
 #footer-nav{
     background: rgb(28,54,67);
@@ -454,14 +163,4 @@
 }
 #footer-nav > .nav > .nav-item > .nav-link:hover{
     background-color: rgb(36, 126, 179);
-}
-@media screen and (max-width:1024px){
-    #footer-nav > .nav{
-        gap: 1rem !important;
-    }
-}
-@media screen and (max-width:768px){
-    #footer-nav > .nav{
-        gap: 0rem !important;
-    }
 }
