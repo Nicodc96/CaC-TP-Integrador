@@ -81,3 +81,13 @@ $contenedorDescuentos.addEventListener("click", e => {
     if (e.target.matches("#box-trainee")) $selectCategorias.value = 2;
     if (e.target.matches("#box-junior")) $selectCategorias.value = 3;
 });
+
+/* Sección para navbar */
+window.onscroll = () => toggleSticky();
+
+const navbar = document.querySelector(".navbar");
+let sticky = navbar.offsetTop;
+
+const toggleSticky = () => {
+    window.scrollY >= sticky ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+}

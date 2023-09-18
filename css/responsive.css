@@ -1,4 +1,9 @@
 /* --------------------------  HEADER -------------------------- */
+@media (min-height:1000px) and (max-width:1920px){
+    .banner-text{
+        bottom: 500px;
+    }
+}
 @media screen and (max-width:1350px){
     .banner-text{
         position: absolute;
@@ -32,6 +37,10 @@
         bottom: 0px;
     }
 }
+@media (height:1368px) and (width:912px){
+    .banner-text{
+        bottom: 700px;
+    }
 @media screen and (max-width:900px){
     .banner-text{
         bottom: 150px;
@@ -40,10 +49,6 @@
         font-size: 16px!important;
     }
 }
-@media (min-height:1000px) and (max-width:930px){
-    .banner-text{
-        bottom: 700px;
-    }
 }
 @media (min-height:1000px) and (max-width:900px){
     .banner-text{
@@ -57,7 +62,7 @@
 }
 @media (min-height:1000px) and (max-width:768px){
     .banner-text{
-        bottom: 350px!important;
+        bottom: 500px!important;
     }
 }
 @media screen and (max-width:768px){
@@ -77,6 +82,24 @@
     .banner-text{
         bottom: 0px!important;
         top: 300px;
+    }
+}
+@media (min-height:1000px) and (max-width:720px){
+    .banner-text{
+        bottom: 0px!important;
+        top: 200px;
+    }
+}
+@media (min-height:500px) and (max-width:300px){
+    .banner-text{
+        bottom: 0px!important;
+        top: 250px;
+    }
+}
+@media (height:720px) and (width:540px){
+    .banner-text{
+        bottom: 0px!important;
+        top: 200px;
     }
 }
 @media screen and (max-width:500px){    
