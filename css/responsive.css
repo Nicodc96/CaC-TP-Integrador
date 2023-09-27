@@ -8,7 +8,7 @@
     .banner-text{
         position: absolute;
         left: 50vw;
-        bottom: 180px;
+        bottom: 280px;
         right: 10vw;
         color: white;
         text-align: right;
@@ -67,7 +67,9 @@
 }
 @media screen and (max-width:768px){
     .banner-text{
-        bottom: 120px;
+        bottom: 0;
+        top: 250px;
+        left: 40vw;
     }
 }
 @media screen and (max-width:700px){
@@ -78,7 +80,7 @@
         margin-bottom: 5px;
     }
 }
-@media (min-height:500px) and (max-width:720px){
+/* @media (min-height:500px) and (max-width:720px){
     .banner-text{
         bottom: 0px!important;
         top: 300px;
@@ -95,7 +97,7 @@
         bottom: 0px!important;
         top: 250px;
     }
-}
+} */
 @media (height:720px) and (width:540px){
     .banner-text{
         bottom: 0px!important;
