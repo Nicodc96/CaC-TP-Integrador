@@ -86,3 +86,24 @@ let sticky = navbar.offsetTop;
 const toggleSticky = () => {
     window.scrollY >= sticky ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
 }
+
+/* Sección para botón que te lleva arriba del todo */
+const btnScrollTop = document.querySelector("#btnScrollTop");
+const containerBtnScrollTop = document.querySelector("#containerBtnScrollTop");
+
+window.addEventListener("scroll", () => {
+    let pageScrollY = Number(window.scrollY).toFixed(0);
+    if (!containerBtnScrollTop.classList.contains("hidden") && pageScrollY < 800) containerBtnScrollTop.classList.add("hidden");
+    if (pageScrollY > 800) containerBtnScrollTop.classList.remove("hidden");
+});
+
+btnScrollTop.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+});
+
+/* Sección para botón Conocer más */
+const btnConocerMas = document.querySelector("#btnConoceMas");
+
+btnConocerMas.addEventListener("click", () => {
+    window.open("https://es.wikipedia.org/wiki/Honolulu", "_blank");
+})

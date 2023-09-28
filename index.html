@@ -44,8 +44,7 @@
                       <a class="nav-link" href="#cards">Los oradores</a>
                       <a class="nav-link" href="#">El lugar y la fecha</a>
                       <a class="nav-link" href="#main-form">Conviértete en orador</a>
-                      <a class="nav-link nav-tickets">Comprar tickets</a>
-                      <!-- data-bs-toggle="modal" data-bs-target="#staticModalTicket" -->
+                      <a class="nav-link nav-tickets" data-bs-toggle="modal" data-bs-target="#staticModalTicket">Comprar tickets</a>
                     </div>
                   </div>
             </div>
@@ -58,8 +57,7 @@
                 a otros estudiantes de Codo a Codo y los oradores del primer nivel que tenemos para ti. ¡Te esperamos!
             </p>
             <button type="button" id="btn-Orador" class="btn btn-outline-light">¡Quiero ser orador!</button>
-            <button type="button" class="btn btn-success">Comprar tickets</button>
-            <!-- data-bs-toggle="modal" data-bs-target="#staticModalTicket" -->
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticModalTicket">Comprar tickets</button>
         </div>
     </header>
     <main>
@@ -120,6 +118,14 @@
                                 <img src="./media/img/honolulu3.jpg" class="img-fluid" alt="honolulu3">
                             </div>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#honoluluCarrousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#honoluluCarrousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
                     </div>
                 </div>
                 <div class="col-6 ps-0 pe-0 bg-maingrid-text text-white border-start border-2 border-gray" id="row-maingrid-col2">
@@ -129,7 +135,7 @@
                     urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu han formado una ciudad-condado 
                     consolidada que cubre toda la ciudad (aproximadamente 600km&#178; de superficie).
                   </p>
-                  <button class="btn btn-outline-light ms-3">Conocé más</button>
+                  <button class="btn btn-outline-light ms-3" id="btnConoceMas">Conocé más</button>
                 </div>
               </div>
             </section>
@@ -254,6 +260,15 @@
                     </div>
                   </div>
             </article>
+        </section>
+        <section id="containerBtnScrollTop">
+            <svg xmlns="http://www.w3.org/2000/svg" id="btnScrollTop" class="icon icon-tabler icon-tabler-arrow-up-circle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="9" />
+                <line x1="12" y1="8" x2="8" y2="12" />
+                <line x1="12" y1="8" x2="12" y2="16" />
+                <line x1="16" y1="12" x2="12" y2="8" />
+            </svg>
         </section>
     </main>
     <footer>
