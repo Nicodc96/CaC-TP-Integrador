@@ -160,6 +160,10 @@
 .background-hidden{
     filter:brightness(45%);
 }
+#row-maingrid .img-fluid{
+    height: 475px;
+    width: 100%;
+}
 #formContactoRowNA,
 #formContactoRowTA{
     width: 60%;
