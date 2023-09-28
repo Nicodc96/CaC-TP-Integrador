@@ -91,9 +91,13 @@ const toggleSticky = () => {
 const btnScrollTop = document.querySelector("#btnScrollTop");
 const containerBtnScrollTop = document.querySelector("#containerBtnScrollTop");
 
+containerBtnScrollTop.classList.add("hidden");
+
 window.addEventListener("scroll", () => {
     let pageScrollY = Number(window.scrollY).toFixed(0);
-    if (!containerBtnScrollTop.classList.contains("hidden") && pageScrollY < 800) containerBtnScrollTop.classList.add("hidden");
+    if (!containerBtnScrollTop.classList.contains("hidden") && pageScrollY < 800){
+        containerBtnScrollTop.classList.add("hidden");
+    }
     if (pageScrollY > 800) containerBtnScrollTop.classList.remove("hidden");
 });
 
