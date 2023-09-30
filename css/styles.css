@@ -84,6 +84,13 @@
     background-color: #117226!important;
 }
 /* Main */
+#mainCardsTitle{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#cards{
+    margin-bottom: 35px;
+}
 .card{
     width: 20vw;
 }
@@ -103,6 +110,10 @@
 }
 .border-gray{
     border-color: #979899!important;
+}
+#main-form{
+    margin-top: 25px;
+    margin-bottom: 35px;
 }
 #btnFormEnviar{
     width: calc(60% - 2%);
