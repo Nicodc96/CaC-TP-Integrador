@@ -164,6 +164,9 @@
 .text-documentacion{
     font-size: 13px;
 }
+.text-decoration-custom{
+    text-decoration:underline dotted;
+}
 .col-name{
     padding-right: 0px;
 }
