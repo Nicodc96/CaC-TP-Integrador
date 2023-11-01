@@ -16,4 +16,4 @@ export const validarNomApe = (input) => /^[a-zA-ZñÑáéíóú\s]{3,24}$/i.test
  * @param {HTMLElement} inputEmail referencia del input
  * @returns {Boolean} **true** si se cumplen las condiciones, de lo contrario **false**
  */
-export const validarEmail = (inputEmail) => /^([a-zA-Z0-9]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/.test(inputEmail.value);
+export const validarEmail = (inputEmail) => /^([a-zA-Z0-9_._-]+@+[a-zA-Z]+(\.)+[a-zA-Z_.]{2,10})$/.test(inputEmail.value);
